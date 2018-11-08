@@ -1,0 +1,9 @@
+.hide{
+	display: none
+}
+#comment_message{
+	font-size:12px;
+	background-color: #eee;
+	padding: 5px;
+	margin:10px 0;
+}
