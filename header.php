@@ -42,6 +42,8 @@
 
 <body class="home-template">
 
+<div id="ajax-content">
+
     <div class="site-wrapper">
 
 

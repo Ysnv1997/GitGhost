@@ -103,9 +103,9 @@ function SuStatic() {
 	wp_register_script( 'jquery3', get_template_directory_uri() . '/static/js/jquery-3.2.1.min.js', array(), true );
 	wp_register_script( 'fancybox', get_template_directory_uri() . '/static/js/jquery.fancybox.min.js', array(), true );
 	wp_register_script( 'fitvids', get_template_directory_uri() . '/static/js/jquery.fitvids.js', array(), true );
-	wp_register_script( 'sigle-header', get_template_directory_uri() . '/static/js/sigle-header.js', array(), true );
 	wp_register_script( 'input', get_template_directory_uri() . '/static/js/input.min.js', array(), true );
 	wp_register_script( 'main', get_template_directory_uri() . '/static/js/main.js', array(), true );
+	wp_register_script( 'highlight', get_template_directory_uri() . '/static/js/highlight.js', array(), true );
     
 
 
@@ -118,12 +118,9 @@ function SuStatic() {
 		wp_enqueue_script( 'jquery3' );
         wp_enqueue_script( 'fancybox' );
 		wp_enqueue_script( 'fitvids' );
+		wp_enqueue_script( 'highlight' );
 		wp_enqueue_script( 'input' );
 		wp_enqueue_script( 'main' );
-
-		if( is_single() ){
-			wp_enqueue_script( 'sigle-header' );
-		}
 	}
     wp_enqueue_style( 'default', get_template_directory_uri() . '/static/css/default.css');
 
@@ -231,7 +228,7 @@ class description_walker extends Walker_Nav_Menu
 		if($depth != 0) $description = "";
  
 		$item_output = $args->before;
-		$item_output .= '<a class="nav-link"'. $attributes .'>';
+		$item_output .= '<a class="nav-link ajax-link"'. $attributes .'>';
 		$item_output .= $args->link_before .apply_filters( 'the_title', $item->title, $item->ID );
 		$item_output .= $description.$args->link_after;
 		$item_output .= '</a>';
@@ -701,7 +698,7 @@ add_shortcode('btn', 'button');
 
 function button_download($atts, $content = null) {    // download-button
     extract(shortcode_atts(array("title" => ''), $atts));
-    $output = '<button class="btn btn-default"><i class="iconfont icon-download"></i> <a target="_blank" href="'.$content.'">立即下载</a></button>';
+    $output = '<button class="btn btn-default"><i class="iconfont icon-cloud-download"></i> <a target="_blank" href="'.$content.'">立即下载</a></button>';
     return $output;
 }
 add_shortcode('btn-download', 'button_download');
@@ -715,14 +712,3 @@ function lightbox_gall_replace ($content) {
     return $content;
 }
 add_filter('the_content', 'lightbox_gall_replace', 99);
-// // 获取QQ头像
-// add_action( 'init', 'ajax_qq_info' );
-// function ajax_qq_info() {
-// 	if( $_GET['action'] == 'ajax_qq_info' && $_GET['qqNum'] ) {
-// 		$qqNum=$_GET['qqNum'];
-// 		$qqInfo = 'http://users.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins=100954636'
-// 		echo '{"'.$qqNum.'":["http://qlogo1.store.qq.com/qzone/'.$qqNum.'/'.$qqNum.'/100",23779,-1,0,0,0,"日渐焦灼的小马哥",0]}';
-// 	}else {
-// 		echo ' 11';
-// 	}
-// }

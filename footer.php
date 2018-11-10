@@ -20,8 +20,9 @@
     </div> -->
 </footer>
 </div>
+
 <div class="back-to-top">
-    <i class="iconfont icon-upbig"></i>
+    <i class="iconfont icon-arrowup"></i>
     <span id="scroll-percent">0%</span>
 </div>
 <div id="subscribe" class="subscribe-overlay">
@@ -30,7 +31,7 @@
         <span class="subscribe-overlay-logo"><?php echo stayma('stayma_info_title');?></span>
         <h1 class="subscribe-overlay-title">静下心来，寻找何物？</h1>
         <p class="subscribe-overlay-description">When you are lost, you should calm down and search for the deepest answer.</p>
-        <form method="post" action="<?php echo home_url( '/' ); ?>" id="" class="">
+        <form method="post" action="<?php echo home_url( '/' ); ?>" id="" class="searchform">
             <input class="confirm" type="hidden" name="confirm" /><input class="location" type="hidden" name="location" /><input class="referrer" type="hidden" name="referrer" />
             <div class="form-group">
                 <input class="subscribe-email" type="search" name="s" placeholder="寻找内心深处的答案" />
@@ -49,7 +50,7 @@
 <div style="display:none;">
     <?php echo stayma('footer_diy');?>
 </div>
-
+</div>
 <?php wp_footer();?>
 </body>
 

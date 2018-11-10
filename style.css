@@ -1,19 +1,109 @@
-/*
-Theme Name: GitGhost
-Theme URI: https://stayma.cn
-Description: 哒哒哒~~~
-Version: 1.0.0
-Author: STAYMA
-Author URI: https://stayma.cn
-Tags: GitGhost,Minimalism,Responsive,Ajax,Write,Free
-License: GNU General Public License v2 or later
-License URI: https://www.stayma.cn/Get-Ghost-Theme.html
+﻿/*
+    Theme Name: GitGhost
+    Theme URI: https://stayma.cn
+    Description: 哒哒哒~~~
+    Version: 1.0.1
+    Author: STAYMA
+    Author URI: https://stayma.cn
+    Tags: GitGhost,Minimalism,Responsive,Ajax,Write,Free
+    License: GNU General Public License v2 or later
+    License URI: https://www.stayma.cn/Get-Ghost-Theme.html
 */
 
 .copyright {
     text-align: center
 }
 
+#default-loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #eaeaea;
+    z-index: 9999999999;
+    -kthml-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+    pointer-events: none;
+    visibility: visible;
+}
+
+#default-loading.all-aboard {
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
+    -kthml-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 1;
+}
+
+#default-loading:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: solid 3px rgba(0,0,0, 0.3);
+    border-top-color: #000000;
+    margin: auto;
+    width: 24px;
+    height: 24px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -o-border-radius: 100%;
+    border-radius: 100%;
+    -webkit-animation: loading .6s infinite linear;
+    -moz-animation: loading .6s infinite linear;
+    -o-animation: loading .6s infinite linear;
+    animation: loading .6s infinite linear;
+}
+
+@-webkit-keyframes loading {
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+@-moz-keyframes loading {
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+@-o-keyframes loading {
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes loading {
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
 
 /* 文章页面内容样式 */
 
@@ -22,7 +112,6 @@ License URI: https://www.stayma.cn/Get-Ghost-Theme.html
     margin: 0 auto;
     padding: 40px 60px 50px;
     min-height: 230px;
-    overflow: hidden;
     font-size: 2.2rem;
     line-height: 1.6em;
     box-shadow: 0px 14px 38px rgba(39, 44, 49, .06), 1px 3px 8px rgba(39, 44, 49, .03);
@@ -142,6 +231,7 @@ code {
 }
 
 @media (max-width:1040px) {
+
     .post-full-content img,
     .post-full-content video {
         width: 100%
@@ -161,7 +251,7 @@ code {
 }
 
 .post-full-content iframe {
-    margin: 0 auto!important
+    margin: 0 auto !important
 }
 
 .post-full-content blockquote {
@@ -311,6 +401,7 @@ code {
     font-family: '微软雅黑';
     font-size: 16px;
     line-height: 1.32;
+    overflow: hidden;
 }
 
 .post-content div {
@@ -468,6 +559,7 @@ code {
         opacity: 0;
         transform: translateY(20px)
     }
+
     100% {
         opacity: 1;
         transform: translateY(0)
@@ -1024,27 +1116,44 @@ img.wp-smiley {
     }
 }
 
-.load-more,
-.section-load-more {
-    width: 40px;
-    height: 40px;
-}
 
 .section-load-more {
     margin: 20px auto 16vh;
+    text-align: center;
+    height: 50px;
+
 }
 
+.section-load-more > div{
+    display: flex;
+    text-align: center;
+    width: 120px;
+    margin: 0 auto;
+    justify-content: center;
+}
+.section-load-more > div >a{
+    text-decoration: none;
+}
+.section-load-more > div >a:nth-child(1){
+    margin: 0 20px 0 0;
+}
+.section-load-more > div >a:nth-child(2){
+    margin: 0 0 0 20px;
+}
 .load-more {
-    display: none;
+    height: 50px;
+    width: 50px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     cursor: pointer;
     -webkit-transition: all .3s ease;
     transition: all .3s ease;
-    border: 8px solid #dcdfe7;
     border-radius: 100px;
     outline: none;
-    background: none;
+    background-color: rgba(0,0,0,0.1);
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
 }
 
 .load-more:hover {
@@ -1052,7 +1161,16 @@ img.wp-smiley {
     transition: .3s cubic-bezier(.39, .07, .68, 1.7);
     -webkit-transform: scale(.65);
     transform: scale(.65);
+    background-color:#0005ff;
+}
+.load-more:hover i{
+    color: #fff;
 }
 
 
+.load-more >i{
+    color: rgba(0,0,0,0.3);
+    font-size: 30px;
+    font-weight: 900;
+}
 /* 新版文章页头 */

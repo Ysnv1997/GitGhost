@@ -55,8 +55,11 @@
 
                 </div>
                 <div class="section-load-more">
-                <?php next_posts_link(__('<div class="load-more" style="display: inline-block;"> </div>')) ?>
+                    <div>
+                        <?php previous_posts_link(__('<div class="load-more" style="display: inline-block;"><i class="iconfont icon-left"></i></div>')) ?>
+                        <?php next_posts_link(__('<div class="load-more" style="display: inline-block;"><i class="iconfont icon-right"></i></div>')) ?>
                     </div>
+                </div>
             </div>
         </main>
     <?php get_footer();?>

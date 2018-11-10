@@ -18,7 +18,7 @@
                     <section class="post-full-content">
                         <div class="post-content">
                             <?php the_content(); ?>
-                            <strong>--EOF--</strong>
+                            <strong style="margin-top:30px;">--EOF--</strong>
                         </div>
                     </section>
 
