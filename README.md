@@ -42,5 +42,7 @@ v1.0.0：
 也就是红框内，请勿修改上面的两个div。否则出错。
 ### 主题反馈
 有问题请在[发布页面](https://www.stayma.cn/get-ghost-theme.html "发布页面") 下面评论
+
 有BUG请在[发布页面](https://www.stayma.cn/get-ghost-theme.html "发布页面") 下面评论
+
 有建议请在[发布页面](https://www.stayma.cn/get-ghost-theme.html "发布页面") 下面评论
